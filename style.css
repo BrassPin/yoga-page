@@ -1,0 +1,154 @@
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #6366F1;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@font-face {
+    font-family: 'Orpheus W05 Regular';
+    src: url('Orpheus W05 Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Orpheus W05 Regular', serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #6366F1;
+}
+
+.premium-card {
+    font-family: 'Orpheus W05 Regular', serif;
+    font-weight: 600;
+    letter-spacing: 0.2;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.premium-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.premium-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin: 1rem 0;
+}
+
+.premium-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.read-more {
+    color: #6366F1;
+    cursor: pointer;
+}
+
+/* style.css */
+
+@keyframes fly-in-from-left {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fly-in-from-right {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fly-in-from-top {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fly-in-from-bottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.premium-card:nth-child(odd) {
+    animation: fly-in-from-left 1s ease both;
+}
+
+.premium-card:nth-child(even) {
+    animation: fly-in-from-right 1s ease both;
+}
+
+.premium-card:nth-child(4n+1) {
+    animation: fly-in-from-top 1s ease both;
+}
+
+.premium-card:nth-child(4n+3) {
+    animation: fly-in-from-bottom 1s ease both;
+}
+
+@keyframes progress-animation {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.animate-progress {
+    animation: progress-animation 3s ease;
+}
+
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: #e5e5e5;
+    z-index: 9999;
+}
+
+#progress {
+    height: 100%;
+    background-color: #3498db;
+    width: 0;
+    animation: progress-animation 3s ease;
+}
